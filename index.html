@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button id="button">
+    Clicar
+  </button>
+  <div class="row">
+    <div class="column">
+      <div id="node-container">
+        <div class="node"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  const button = document.getElementById('button');
+  const nodes = document.getElementsByClassName('node');
+  const node_container = document.getElementById('node-container');
+
+  createNewNode = () => {
+    const new_node = document.createElement('div');
+    new_node.classList.add('node');
+    node_container.appendChild(new_node);
+  }
+
+  button.onclick = (event) => {
+    const last_node = nodes[nodes.length-1];
+    if (last_node.classList.contains('animating-node-arrow'))
+      last_node.classList.remove('animating-node-arrow');
+    else {
+      window.setTimeout(() => {
+        createNewNode();
+        last_node.classList.remove('animating-node_arrow');
+        }, 1500);
+      last_node.classList.add('animating-node-arrow');
+    }
+  }
+  
+
+</script>
+</html>
