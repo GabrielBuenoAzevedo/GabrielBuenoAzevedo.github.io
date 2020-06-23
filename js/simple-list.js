@@ -2,6 +2,7 @@ const button = document.getElementById('button');
 const nodes = document.getElementsByClassName('node');
 const node_container = document.getElementById('node-container');
 const max_animation_time = 1500;
+let creating = false;
 let creation_queue = [];
 
 //Create a new node for the list.
@@ -11,6 +12,8 @@ createNewNode = () => {
     const new_node = document.createElement('div');
     new_node.classList.add('node');
     node_container.appendChild(new_node);
+    creation_queue.shift();
+    runCreationQueue();
   }, animation_time);
 }
 
@@ -27,13 +30,14 @@ startAnimation = () => {
 //Adds createNode to creation queue
 addNodeToCreationQueue = () => {
   let animation_time = 0;
-  console.log(creation_queue);
-  if (nodes.length > 0 ){
+  if (creation_queue.length > 0){
     animation_time = max_animation_time;
   }
   creation_queue.push(animation_time);
-  if (creation_queue.length === 1) 
+  if (creation_queue.length === 1) {
+    creating = true;
     runCreationQueue();
+  }
 }
 
 //Starts running creation queue
@@ -43,10 +47,8 @@ runCreationQueue = () => {
     console.log(animation_time)
     window.setTimeout( () => {
       createNewNode();
-      creation_queue.shift();
-      runCreationQueue();
     }, animation_time)
-  }
+  } 
 }
 
 button.onclick = addNodeToCreationQueue;
