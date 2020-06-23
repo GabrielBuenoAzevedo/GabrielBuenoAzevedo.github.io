@@ -31,7 +31,7 @@ button {
   display: flex;
 }
 
-.animating-node-arrow::before {
+.node-arrow::before {
   content: '';
   display: block;
   position: relative;
@@ -43,7 +43,7 @@ button {
   animation-duration: 1s;
 }
 
-.animating-node-arrow::after {
+.node-arrow::after {
   content: '';
   display: block;
   position: relative;
