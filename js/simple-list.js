@@ -30,6 +30,7 @@ startAnimation = () => {
 //Adds createNode to creation queue
 addNodeToCreationQueue = () => {
   let animation_time = 0;
+  console.log('Size: ', creation_queue.length)
   if (creation_queue.length > 0){
     animation_time = max_animation_time;
   }
@@ -44,10 +45,7 @@ addNodeToCreationQueue = () => {
 runCreationQueue = () => {
   if (creation_queue.length > 0){
     const animation_time = creation_queue[0];
-    console.log(animation_time)
-    window.setTimeout( () => {
-      createNewNode();
-    }, animation_time)
+    window.setTimeout( createNewNode, 350 );
   } 
 }
 
