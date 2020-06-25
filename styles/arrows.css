@@ -8,7 +8,10 @@
   border-top: 3px solid;
   top: calc(50% - 1.5px);
   background-color: 'black';
-  animation: appearing_line 1s forwards;
+  animation-name: appearing_line;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* animation: appearing_line 1s forwards; */
 }
 
 /*Arrow*/
@@ -28,6 +31,17 @@
   animation-duration: 0.5s;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+}
+
+/*DEFINING TOP VALUES TO ARROW THROUGHT CLASSES*/
+/*Top 25%*/
+.arrow-right.top-25, .arrow-left.top-25 {
+  top: calc(25% - 1.5px);
+}
+
+/*Top 75%*/
+.arrow-right.top-75, .arrow-left.top-45 {
+  top: calc(45% - 1.5px);
 }
 
 /*SPECIFIC TO RIGHT ARROW*/
