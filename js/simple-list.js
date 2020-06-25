@@ -21,7 +21,10 @@ createNewNode = () => {
 startAnimation = () => {
   if (nodes.length > 0){
     const last_node = nodes[nodes.length-1];
-    last_node.classList.add('node-arrow');
+    const arrow_div = document.createElement('div');
+    arrow_div.className = 'arrow-right';
+    last_node.appendChild(arrow_div);
+    // last_node.classList.add('node-arrow');
     return max_animation_time;
   }
   return 0;

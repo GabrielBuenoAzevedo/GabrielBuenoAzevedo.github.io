@@ -34,63 +34,7 @@ button {
   display: flex;
 }
 
-.node-arrow::before {
-  content: '';
-  display: block;
-  position: relative;
-  top: calc(50% - 3px);
-  left: 100%;
-  border-top: 3px solid;
-  animation-name: moving_line;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-}
-
-.node-arrow::after {
-  content: '';
-  display: block;
-  position: relative;
-  top: calc(50% - 15px);
-  left: calc(200% - 12px);
-  border-width: 3px 3px 0px 0px;
-  border-radius: 1px;
-  border-style: solid;
-  width: 0px;
-  height: 0px;
-  transform: rotate(45deg);
-  opacity: 0.0;
-  animation: appearing_arrow 0.5s 1s forwards;
-  /* animation-name: appearing_arrow;
-  animation-duration: 2s; */
-  /* animation-delay: 5s; */
-}
-
-@keyframes moving_line {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes appearing_arrow {
-  0% {
-    top: calc( 50% - 6px);
-    left: 200%;
-    width: 0px;
-    height: 0px;
-    opacity: 1.0;
-  }
-  100% {
-    width: 10px;
-    height: 10px;
-    top: calc(50% - 8px - 3px);
-    left: calc(200% - 12px);
-    opacity: 1.0;
-  }
-}
-
+/*ANIMATIONS*/
 @keyframes create_node {
   0% {
     width: 0px;
